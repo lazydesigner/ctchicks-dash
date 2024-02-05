@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if(!isset($_SESSION['email'])){
+    header('Location: https://ctchicks.com/auth-login');
+}
+
 function generateCsrfToken() {
     if (empty($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Generate a random token
