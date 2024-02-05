@@ -617,7 +617,6 @@ if (mysqli_num_rows($result) > 0) {
         }
 
         function displayImagesOnPage(myImage) {
-            console.log(myImage)
             document.getElementById('preview-the-selected-image').innerHTML = "";
             for (let key in myImage) {
                 document.getElementById('preview-the-selected-image').innerHTML += '<div class="preview-image-box">\
@@ -668,7 +667,6 @@ if (mysqli_num_rows($result) > 0) {
             var type = document.getElementById('profile_type').value;
             if (type !== 0) {
                 selected_category = type.split(' | ')
-                console.log(selected_category)
                 category_label = document.getElementsByTagName('label');
                 for (i = 0; i < category_label.length; i++) {
                     category_label[i].childNodes[0].checked = false
