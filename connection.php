@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['email'])){
-    header('Location: https://ctchicks.com/auth-login');
+    header('Location: https://dash.ctchicks.com/auth-login');
 }
 
 function generateCsrfToken() {
