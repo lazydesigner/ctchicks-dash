@@ -679,7 +679,6 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
                     setTimeout(() => {
                         document.querySelector('.error-msg').style.display = 'none'
                     }, 3000)
-                        console.log(d)
                 }
             })
 

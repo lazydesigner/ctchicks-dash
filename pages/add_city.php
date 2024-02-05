@@ -486,9 +486,6 @@ button:hover::after{
                     document.querySelector('.delete-warning').style.display = 'none';
                     document.getElementById('list_of_all_area_with_city').innerHTML = '';
                     document.getElementById('list_of_all_area_with_city').innerHTML += d['output']
-                    console.log(d['a'])
-                    console.log('===============================')
-                    console.log(d['b'])
                     // success message
                     document.getElementById('successMessage').style.backgroundColor = 'green';
                     document.getElementById('successMessage').innerHTML = '<p>Deleted Successfully</p>'
