@@ -601,7 +601,7 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
             let imgPath = confirm_image.files[0];
             const formData = new FormData()
             formData.append('file', imgPath)
-            await fetch('<?= get_url() ?>upload-image', {
+            await fetch('https://cdn.ctchicks.com/upload-image', {
                     method: 'POST',
                     body: formData
                 }).then(res => res.json())
