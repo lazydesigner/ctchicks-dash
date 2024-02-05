@@ -563,7 +563,6 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
                 if (label[i].nextSibling.textContent.includes(checked_box[j])) {
                     label[i].checked = true;
                 }
-                    console.log(label[i].nextSibling.textContent+' = '+ checked_box[j])
             }
         }
 
@@ -655,7 +654,7 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
             // myImage = JSON.parse(myImage);
             const del_image = new FormData();
             del_image.append('path', pathofimagetobedeleted)
-            fetch('../delete-the-image.php', {
+            fetch('https://cdn.ctchicks.com/delete-the-image.php', {
                 method: 'POST',
                 body: del_image
             }).then(res => res.json()).then(d => {
