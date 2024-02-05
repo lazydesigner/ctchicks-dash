@@ -586,7 +586,7 @@ if (mysqli_num_rows($result) > 0) {
             // myImage = JSON.parse(myImage);
             const del_image = new FormData();
             del_image.append('path', pathofimagetobedeleted)
-            fetch('<?=get_url() ?>delete-the-image.php', {
+            fetch('https://cdn.ctchicks.com/delete-the-image.php', {
                 method: 'POST',
                 body: del_image
             }).then(res => res.json()).then(d => {
