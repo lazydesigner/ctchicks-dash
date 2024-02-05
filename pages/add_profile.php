@@ -531,7 +531,7 @@ if (mysqli_num_rows($result) > 0) {
             let imgPath = confirm_image.files[0];
             const formData = new FormData()
             formData.append('file', imgPath)
-            await fetch('<?= get_url() ?>upload-image', {
+            await fetch('https://cdn.ctchicks.com/upload-image', {
                     method: 'POST',
                     body: formData
                 }).then(res => res.json())
@@ -584,7 +584,7 @@ if (mysqli_num_rows($result) > 0) {
             // myImage = JSON.parse(myImage);
             const del_image = new FormData();
             del_image.append('path', pathofimagetobedeleted)
-            fetch('../delete-the-image.php', {
+            fetch('<?=get_url() ?>delete-the-image.php', {
                 method: 'POST',
                 body: del_image
             }).then(res => res.json()).then(d => {

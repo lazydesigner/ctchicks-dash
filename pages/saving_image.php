@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $originalImagePath = $uploaded_image['tmp_name'];
 
             $newImageName = 'ctchicks_'.uniqid('', true) . '.webp'; // Generate unique name for new image
-            $target_dir = "../profiles/" . $newImageName;
+            $target_dir = "profiles/" . $newImageName;
 
             if (!file_exists($target_dir)) {
                 if (move_uploaded_file($originalImagePath, $target_dir)) {
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo json_encode(['error_msg' => 'File Type Image is Required']);
             } else {
                 $originalImagePath = $uploaded_image['tmp_name'];
-                $target_dir = "../profiles/";
+                $target_dir = "profiles/";
 
                 $webpImagePath = uniqid('ctchicks_') . '.webp';        
 
