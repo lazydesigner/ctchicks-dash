@@ -1,0 +1,19 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+Options -Indexes
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+ReWriteRule ^$ mainpage.php [NC,L]
+
+
+ReWriteRule ^add-profile([/]?)$ pages/add_profile.php [NC,L]
+ReWriteRule ^edit-profile/([0-9\-]+)([/]?)$ pages/edit_profile.php?id_=$1 [NC,L]
+ReWriteRule ^add-city([/]?)$ pages/add_city.php [NC,L]
+ReWriteRule ^upload-image([/]?)$ pages/saving_image.php [NC,L]
+
+ReWriteRule ^save-the-city([/]?)$ adding_city_area.php [NC,L]
+ReWriteRule ^delete-the-city([/]?)$ deleting_city_area.php [NC,L]
+ReWriteRule ^auth-login([/]?)$ login.php [NC,L]
+ReWriteRule ^auth-logout([/]?)$ logout.php [NC,L]
+
