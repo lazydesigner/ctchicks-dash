@@ -58,6 +58,8 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css" async /> -->
     <title>CTChicks - Dashboard</title>
     <link rel="stylesheet" href="<?= get_url() ?>assets/css/index.css">
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex,nofollow">
     <style>
         /* FORM STYLE */
         /* .action-center { */

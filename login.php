@@ -1,5 +1,32 @@
 <?php include './routes.php';
-include './connection.php' ?>
+session_abort();
+
+function localConnection() {
+    // Define an array of common localhost hostnames or IP addresses
+    $localhosts = array('localhost', '127.0.0.1');
+
+    // Get the server's hostname
+    $serverHostname = $_SERVER['SERVER_NAME'];
+
+    // Check if the server's hostname is in the array of localhost values
+    return in_array($serverHostname, $localhosts);
+}
+
+if(localConnection()){
+    $con = mysqli_connect('localhost','root','','ctchicks');
+    
+    if(!$con){
+        die('Not Connected');
+    }
+
+}else{
+    $con = mysqli_connect('localhost','u231955561_ctchicks','@Ctchicks1','u231955561_ct');
+    if(!$con){
+        die('Not Connected');
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +34,7 @@ include './connection.php' ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css" async /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css" async />
     <title>CTChicks - Dashboard</title>
     <link rel="stylesheet" href="<?= get_url() ?>assets/css/index.css">
 

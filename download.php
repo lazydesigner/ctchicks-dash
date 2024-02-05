@@ -57,6 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Downloader</title>
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex,nofollow">
 </head>
 <body>
     <h1>Image Downloader</h1>

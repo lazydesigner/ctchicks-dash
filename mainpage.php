@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css" async />
     <title>CTChicks - Dashboard</title>
     <link rel="stylesheet" href="./assets/css/index.css">
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex,nofollow">
     <style>
         .search-add-add-profile {
             width: 100%;
