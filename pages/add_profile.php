@@ -533,7 +533,7 @@ if (mysqli_num_rows($result) > 0) {
             let imgPath = confirm_image.files[0];
             const formData = new FormData()
             formData.append('file', imgPath)
-            await fetch('https://cdn.ctchicks.com/upload-image', {
+            await fetch('https://cdn.ctchicks.com/upload-image/', {
                     method: 'POST',
                     body: formData
                 }).then(res => res.json())

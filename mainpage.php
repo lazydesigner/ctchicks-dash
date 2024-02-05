@@ -195,8 +195,18 @@
                                 </td>
                                 <td><?=$row['cities'] ?></td>
                                 <td><?=$row['areas'] ?></td>
+                                <?php                                 
+                                $create_url = 'https://ctchicks.com/'.$row['cities'].'/';
+                                    if(strtolower($row['areas']) == 'all'){
+                                        $create_url.= $row['identity_cat'].'/';
+                                    }else{
+                                        $create_url.= $row['areas'].'/'.$row['identity_cat'].'/';
+                                    }
+
+                                
+                                ?>
                                 <td>
-                                    <div class="action-btn"><a href="<?=get_url() ?>edit-profile/<?=$row['profile_id'] ?>"><span class="tooltip" data-tooltip="Edit!"><i class="ri-edit-box-line"></i></span></a> <a href="https://ctchicks.com/<?=$row['cities'] ?>/<?=$row['areas'] ?>/<?=$row['identity_cat'] ?>/"><span class="tooltip" data-tooltip="View!"><i class="ri-eye-2-line"></i></span></a></div>
+                                    <div class="action-btn"><a href="<?=get_url() ?>edit-profile/<?=$row['profile_id'] ?>"><span class="tooltip" data-tooltip="Edit!"><i class="ri-edit-box-line"></i></span></a> <a href="<?=$create_url ?>"><span class="tooltip" data-tooltip="View!"><i class="ri-eye-2-line"></i></span></a></div>
                                 </td>
                             </tr>
                                 <?php }
