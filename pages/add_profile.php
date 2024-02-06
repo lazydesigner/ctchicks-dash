@@ -5,7 +5,7 @@ include '../connection.php' ?>
 $city_query = "SELECT * FROM city ";
 // $city_query = "SELECT * FROM city INNER JOIN area on city.city_id = area.city_area_id";
 $result = mysqli_query($con, $city_query);
-$option = '<option value="0">---Select A City---</option>';
+$option = '<option value="all">---Select A City---</option>';
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
@@ -637,7 +637,7 @@ if (mysqli_num_rows($result) > 0) {
         document.getElementById('cities').addEventListener('change', () => {
             let cityId = document.getElementById("cities").value;
             if (cityId == 0) {
-                document.querySelector('#areas').innerHTML = "<option value='0'><p style='text-transform: capitalize;'>--Select Area--</p></option>"
+                document.querySelector('#areas').innerHTML = "<option value='all'><p style='text-transform: capitalize;'>--Select Area--</p></option>"
             }
             const list_area = new FormData();
             list_area.append('city', cityId);

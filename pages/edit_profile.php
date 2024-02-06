@@ -12,7 +12,7 @@ $row = mysqli_fetch_assoc($result);
 $city_option_query = "SELECT * FROM city";
 // $city_query = "SELECT * FROM city INNER JOIN area on city.city_id = area.city_area_id";
 $result_option = mysqli_query($con, $city_option_query);
-$option = '<option value="0">---Select A City---</option>';
+$option = '<option value="all">---Select A City---</option>';
 
 if (mysqli_num_rows($result_option) > 0) {
     while ($row_option = mysqli_fetch_array($result_option)) {
@@ -28,7 +28,10 @@ $area_option_query = "SELECT * FROM area2 WHERE area_city_name = '" . strtolower
 $area_result = mysqli_query($con, $area_option_query);
 
 $area_result_row = mysqli_fetch_assoc($area_result);
-$option_area = '<option value="0">All Location</option>';
+$option_area = '<option value="all">All Location</option>';
+
+if(!empty($area_result_row['area_name'])){
+
 foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
     $x = explode('-', $area_row);
     $d = '';
@@ -41,7 +44,7 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
         $option_area .= "<option value='" . strtolower($area_row) . "'>" . $d . "</option>";
     }
 }
-
+}
 
 
 
@@ -443,8 +446,8 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
                                     ?>
 
                                     <input type="number" class="bust" min="28" name="profile_body_shape[]" value="<?= $body_[0] ?>" id="bust" placeholder="Bust">
-                                    <input type="number" min="28" name="profile_body_shape[]" value="28" id="<?= $body_[1] ?>" placeholder="Waist">
-                                    <input type="number" min="28" name="profile_body_shape[]" value="34" id="<?= $body_[2] ?>" placeholder="Hip">
+                                    <input type="number" min="28" name="profile_body_shape[]" value="<?= $body_[1] ?>" id="Waist" placeholder="Waist">
+                                    <input type="number" min="28" name="profile_body_shape[]" value="<?= $body_[2] ?>" id="Hip" placeholder="Hip">
                                 </div>
                             </div>
                         </div>

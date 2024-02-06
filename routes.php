@@ -1,5 +1,6 @@
 
 <?php   
+// $pro_cdn = 'https://localhost/dashboard.ctchicks.com/';
 $pro_cdn = 'https://cdn.ctchicks.com/';
 function isLocalhost() {
     // Define an array of common localhost hostnames or IP addresses

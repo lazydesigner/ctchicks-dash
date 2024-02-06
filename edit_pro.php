@@ -19,14 +19,15 @@ $page_title = $_POST['page_title'];
 $meta_description = $_POST['meta_description'];
 $profile_name = $_POST['profile_name'];
 $profile_age = $_POST['profile_age'];
-$profile_height = explode("'",$_POST['profile_height']);
+
+$profile_height2 = explode("'", $_POST['profile_height']);
 
 $profile_height ='';
-if(!empty($profile_height[0])){
-    $profile_height = $profile_height[0] ;
-}
-if(isset($profile_height[1])){
-    $profile_height = "\'".$profile_height[1] ;
+
+$profile_height = $profile_height2[0] ;
+
+if(isset($profile_height2[1])){
+    $profile_height .= "\'".$profile_height2[1] ;
 }
 
 if($_POST['profile_language'] == '' || empty($_POST['profile_language'])){
@@ -49,6 +50,8 @@ $query = "UPDATE `profiles` SET `identity`=$identity,`identity_cat`='$identity_c
 $result = mysqli_query($con, $query);
 if ($result) {
     echo '<script>alert("Profile Updated successfully!")</script>';
+    // echo $profile_height;
+    // echo $_POST['profile_height'];
     header('Location:'.get_url().'');
 } else {
     echo "<div class='error'>Cannot create new user.</div>";

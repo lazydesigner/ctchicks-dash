@@ -31,14 +31,13 @@ $page_title = $_POST['page_title'];
 $meta_description = $_POST['meta_description'];
 $profile_name = $_POST['profile_name'];
 $profile_age = $_POST['profile_age'];
-$profile_height = explode("'",$_POST['profile_height']);
+$profile_height2 = explode("'",$_POST['profile_height']);
 
 $profile_height ='';
-if(!empty($profile_height[0])){
-    $profile_height = $profile_height[0] ;
-}
-if(!isset($profile_height[1])){
-    $profile_height = "\'".$profile_height[1] ;
+    $profile_height = $profile_height2[0] ;
+
+if(isset($profile_height2[1])){
+    $profile_height .= "\'".$profile_height2[1] ;
 }
 
 if($_POST['profile_language'] == '' || empty($_POST['profile_language'])){
