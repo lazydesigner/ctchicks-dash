@@ -372,6 +372,9 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="form-group">
                             <textarea name="meta_description" placeholder="Page Description (Optional)" id="meta_description" cols="30" rows="10"></textarea>
                         </div>
+                        <div class="form-group">
+                            <input type="text" name="page_h1" autocomplete="off" placeholder="Page H1" id="page_title">
+                        </div>
                     </div>
                     <div class="form-container">
                         <h2>Profile Details</h2>

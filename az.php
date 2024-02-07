@@ -50,7 +50,7 @@ function zipFolder($folder, $zipFilePath) {
 }
 
 // Example usage
-$imageUrl = 'https://cdn.ctgal.com/content/images/1953-1.jpg';
+$imageUrl = 'https://bhopalgirlhub.in/';
 $baseFolder = './';
 
 $uniqueFolder = createUniqueFolder($baseFolder);

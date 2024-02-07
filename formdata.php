@@ -27,6 +27,7 @@ if($callgirl_escort == "call-girls"){
 
 $cities = $_POST['cities'];
 $areas = $_POST['areas'];
+$page_h1 = $_POST['page_h1'];
 $page_title = $_POST['page_title'];
 $meta_description = $_POST['meta_description'];
 $profile_name = $_POST['profile_name'];
@@ -55,7 +56,7 @@ $image_alt_ = json_encode($_POST['image_alt_']);
 $content = $_POST['content'];
 
 
-$query = "INSERT INTO `profiles`(`identity`, `identity_cat`, `callgirl_escort`, `cities`, `areas`, `page_title`, `meta_description`, `profile_name`, `profile_age`, `profile_height`, `profile_language`, `profile_nationality`, `profile_body_shape`, `cat_`, `image_`, `image_alt_`, `content`) VALUES ($identity,'$identity_cat','$callgirl_escort','$cities','$areas','$page_title','$meta_description','$profile_name',$profile_age,'$profile_height','$profile_language','$profile_nationality','$profile_body_shape','$cat_','$image_','$image_alt_','$content')";
+$query = "INSERT INTO `profiles`(`identity`, `identity_cat`, `callgirl_escort`, `cities`, `areas`, `page_title`,`page_h1`, `meta_description`, `profile_name`, `profile_age`, `profile_height`, `profile_language`, `profile_nationality`, `profile_body_shape`, `cat_`, `image_`, `image_alt_`, `content`) VALUES ($identity,'$identity_cat','$callgirl_escort','$cities','$areas','$page_title','$page_h1','$meta_description','$profile_name',$profile_age,'$profile_height','$profile_language','$profile_nationality','$profile_body_shape','$cat_','$image_','$image_alt_','$content')";
 
 $result = mysqli_query($con, $query);
 if ($result) {
