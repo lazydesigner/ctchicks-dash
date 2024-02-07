@@ -394,7 +394,7 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
                                 <select name="callgirl-escort" id="callgirl-escort">
                                     <?php if ($row['callgirl_escort'] == 'call-girls') { ?>
                                         <option value="call-girls" selected>Call Girl</option>
-                                    <option value="escort">Escorts</option>
+                                    <option value="escorts">Escorts</option>
                                     <?php } else { ?>
                                         <option value="call-girls">Call Girl</option>
                                     <option value="escort" selected>Escorts</option>

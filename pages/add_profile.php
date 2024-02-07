@@ -356,7 +356,7 @@ if (mysqli_num_rows($result) > 0) {
                             <div class="form-flex">
                                 <select name="callgirl-escort" id="callgirl-escort" required>
                                     <option value="call-girls">Call Girl</option>
-                                    <option value="escort">Escorts</option>
+                                    <option value="escorts">Escorts</option>
                                 </select>
                                 <select name="cities" id="cities">
                                     <?= $option ?>
