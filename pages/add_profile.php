@@ -354,7 +354,7 @@ if (mysqli_num_rows($result) > 0) {
                         <h2>Page Details</h2>
                         <div class="form-group">
                             <div class="form-flex">
-                                <select name="callgirl-escort" id="callgirl-escort">
+                                <select name="callgirl-escort" id="callgirl-escort" required>
                                     <option value="call-girls">Call Girl</option>
                                     <option value="escort">Escorts</option>
                                 </select>
@@ -367,43 +367,43 @@ if (mysqli_num_rows($result) > 0) {
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="page_title" autocomplete="off" placeholder="Page Title (Optional)" id="page_title">
+                            <input type="text" name="page_title" autocomplete="off" placeholder="Page Title (Optional)" id="page_title" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="meta_description" placeholder="Page Description (Optional)" id="meta_description" cols="30" rows="10"></textarea>
+                            <textarea name="meta_description" placeholder="Page Description (Optional)" id="meta_description" required cols="30" rows="10"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="page_h1" autocomplete="off" placeholder="Page H1" id="page_title">
+                            <input type="text" name="page_h1" autocomplete="off" placeholder="Page H1" id="page_title" required>
                         </div>
                     </div>
                     <div class="form-container">
                         <h2>Profile Details</h2>
                         <div class="form-group">
                             <div class="form-flex">
-                                <input type="text" name="profile_name" placeholder="Enter Name" id="profile_name">
-                                <input type="text" maxlength="2" name="profile_age" placeholder="Enter Age" pattern="[1-9][0-9]" id="profile_age">
-                                <input type="text" name="profile_height" maxlength="4" placeholder="Enter Height (height must be in foot)" id="profile_height">
+                                <input type="text" name="profile_name" placeholder="Enter Name" id="profile_name" required>
+                                <input type="text" maxlength="2" name="profile_age" placeholder="Enter Age" pattern="[1-9][0-9]" id="profile_age" required>
+                                <input type="text" name="profile_height" maxlength="4" placeholder="Enter Height (height must be in foot)" id="profile_height" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="form-flex">
-                                <input type="text" name="profile_language" placeholder="Enter Language (Optional)" id="profile_language" list="profile_language2" style="appearance: none;">
+                                <input type="text" name="profile_language" placeholder="Enter Language (Optional)" id="profile_language" list="profile_language2" style="appearance: none;" required>
                                 <datalist id="profile_language2">
                                     <option value="Hindi">Hindi</option>
                                     <option value="Hindi, English">Hindi, English</option>
                                     <option value="English">English</option>
                                 </datalist>
-                                <input type="text" name="profile_nationality" placeholder="Enter Nationality (Optional)" id="profile_nationality" list="nation">
+                                <input type="text" name="profile_nationality" placeholder="Enter Nationality (Optional)" id="profile_nationality" list="nation" required>
                                 <datalist id="nation">
                                     <option value="Indian">Indian</option>
                                     <option value="Russian">Russian</option>
                                     <option value="Other">Other</option>
                                 </datalist>
                                 <div class="form-flex2 body-shape">
-                                    <input type="number" class="bust" min="28" name="profile_body_shape[]" value="32" id="bust" placeholder="Bust">
-                                    <input type="number" min="28" name="profile_body_shape[]" value="28" id="waist" placeholder="Waist">
-                                    <input type="number" min="28" name="profile_body_shape[]" value="34" id="hip" placeholder="Hip">
+                                    <input type="number" class="bust" min="28" name="profile_body_shape[]" value="32" id="bust" placeholder="Bust" required>
+                                    <input type="number" min="28" name="profile_body_shape[]" value="28" id="waist" placeholder="Waist" required>
+                                    <input type="number" min="28" name="profile_body_shape[]" value="34" id="hip" placeholder="Hip" required>
                                 </div>
                             </div>
                         </div>
