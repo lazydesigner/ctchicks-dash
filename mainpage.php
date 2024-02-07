@@ -196,7 +196,7 @@
                                 <td><?=$row['cities'] ?></td>
                                 <td><?=$row['areas'] ?></td>
                                 <?php                                 
-                                $create_url = 'https://ctchicks.com/'.$row['cities'].'/';
+                                $create_url = 'https://ctchicks.com/'.$row['callgirl_escort'].'/'.$row['cities'].'/';
                                     if(strtolower($row['areas']) == 'all'){
                                         $create_url.= $row['identity_cat'].'/';
                                     }else{
