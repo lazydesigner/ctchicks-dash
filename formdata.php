@@ -53,7 +53,12 @@ $profile_body_shape = json_encode($_POST['profile_body_shape']);
 $cat_ = json_encode($_POST['cat_']);
 $image_ = json_encode($_POST['image_']);
 $image_alt_ = json_encode($_POST['image_alt_']);
-$content = $_POST['content'];
+
+$html_content = $_POST['content'];
+$allowed_tags = array('<b>', '<i>', '<a>'); // Allowed tags
+$content = strip_tags($html_content, implode('', $allowed_tags));
+
+
 
 
 $query = "INSERT INTO `profiles`(`identity`, `identity_cat`, `callgirl_escort`, `cities`, `areas`, `page_title`,`page_h1`, `meta_description`, `profile_name`, `profile_age`, `profile_height`, `profile_language`, `profile_nationality`, `profile_body_shape`, `cat_`, `image_`, `image_alt_`, `content`) VALUES ($identity,'$identity_cat','$callgirl_escort','$cities','$areas','$page_title','$page_h1','$meta_description','$profile_name',$profile_age,'$profile_height','$profile_language','$profile_nationality','$profile_body_shape','$cat_','$image_','$image_alt_','$content')";
