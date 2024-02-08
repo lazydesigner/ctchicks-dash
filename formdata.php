@@ -27,9 +27,9 @@ if($callgirl_escort == "call-girls"){
 
 $cities = $_POST['cities'];
 $areas = $_POST['areas'];
-$page_h1 = $_POST['page_h1'];
-$page_title = $_POST['page_title'];
-$meta_description = $_POST['meta_description'];
+$page_h1 = addslashes($_POST['page_h1']);
+$page_title = addslashes($_POST['page_title']);
+$meta_description = addslashes($_POST['meta_description']);
 $profile_name = $_POST['profile_name'];
 $profile_age = $_POST['profile_age'];
 $profile_height2 = explode("'",$_POST['profile_height']);
