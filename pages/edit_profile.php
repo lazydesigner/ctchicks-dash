@@ -397,7 +397,7 @@ if (!empty($area_result_row['area_name'])) {
                                         <option value="escorts">Escorts</option>
                                     <?php } else { ?>
                                         <option value="call-girls">Call Girl</option>
-                                        <option value="escort" selected>Escorts</option>
+                                        <option value="escorts" selected>Escorts</option>
                                     <?php } ?>
                                 </select>
                                 <select name="cities" id="cities">
@@ -412,7 +412,7 @@ if (!empty($area_result_row['area_name'])) {
                             <input type="text" name="page_title" value="<?= $row['page_title'] ?>" autocomplete="off" placeholder="Page Title (Optional)" id="page_title">
                         </div>
                         <div class="form-group">
-                            <textarea name="meta_description" value="<?= $row['meta_description'] ?>" placeholder="Page Description (Optional)" id="meta_description" cols="30" rows="10"></textarea>
+                            <textarea name="meta_description" placeholder="Page Description (Optional)" id="meta_description" cols="30" rows="10"><?= $row['meta_description'] ?></textarea>
                         </div>
                         <div class="form-group">
                             <input type="text" name="page_h1" autocomplete="off" value="<?= $row['page_h1'] ?>" placeholder="Page H1" id="page_title" required>
@@ -611,12 +611,12 @@ if (!empty($area_result_row['area_name'])) {
 
         <?php }} ?>
 
-        async function confirm_(myImage) {
+        function confirm_(myImage) {
             confirm_image = document.getElementById('images');
             let imgPath = confirm_image.files[0];
             const formData = new FormData()
             formData.append('file', imgPath)
-            await fetch('https://cdn.ctchicks.com/upload-image', {
+            fetch('https://cdn.ctchicks.com/upload-image', {
                     method: 'POST',
                     body: formData
                 }).then(res => res.json())
