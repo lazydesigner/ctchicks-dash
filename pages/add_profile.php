@@ -473,7 +473,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="form-container">
                         <div class="form-group">
                             <div class="form-flex">
-                                <input type="file" name="images" id="images" accept="image/*" id="">
+                                <input type="file" name="images" id="images" accept="image/*" id="" multiple>
 
                                 <div class="preview-the-selected-image" id="preview-the-selected-image">
 
@@ -515,21 +515,69 @@ if (mysqli_num_rows($result) > 0) {
 
 
     <script>
+        let myImage = {};
+
         document.getElementById('images').addEventListener('change', (event) => {
-            document.getElementById('preview-the-image').style.display = 'grid';
+            // document.getElementById('preview-the-image').style.display = 'grid';
             const input = event.target;
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imagePreview = document.getElementById('preview-image');
-                    imagePreview.src = e.target.result;
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
+
+            array_of_img = Array.from(event.target.files)
+            array_of_img.forEach(async (f)=>{
+            
+            let imgPath = f;
+            const formData = new FormData()
+            formData.append('file', imgPath)
+            await fetch('<?=get_url() ?>upload-image/', {
+                    method: 'POST',
+                    body: formData
+                }).then(res => res.json())
+                .then(data => {
+                    if (data['status'] == 200) {
+                        image_count = Object.keys(myImage).length
+                        image_count2 = Object.keys(myImage)
+                        if (image_count == 0) {
+                            image_count++
+                        } else {
+                            image_count = image_count2[image_count - 1]
+                            image_count++
+                        }
+                        myImage[image_count] = {}
+                        myImage[image_count]['image_path'] = data['image_path'];
+                        myImage[image_count]['image_name'] = data['image_name'];
+                        myImage[image_count]['number_of_image'] = image_count;
+                        myImage[image_count]['image_alt'] = '';
+
+
+                        displayImagesOnPage(myImage);
+                        document.getElementById('preview-the-image').style.display = 'none';
+                        if ((image_count2.length + 1) == 4) {
+                            document.getElementById("images").disabled = true;
+                        }
+
+                    } else {
+                        document.querySelector('.error-msg').style.display = 'block'
+                        document.querySelector('.error-msg').style.backgroundColor = 'tomato'
+                        document.getElementById('error_msg').innerText = data['error_msg']
+                        setTimeout(() => {
+                            document.querySelector('.error-msg').style.display = 'none'
+                        }, 3000)
+                    }
+                })
+            
+            })
+
+            
+            // if (input.files && input.files[0]) {
+            //     const reader = new FileReader();
+            //     reader.onload = function(e) {
+            //         const imagePreview = document.getElementById('preview-image');
+            //         imagePreview.src = e.target.result;
+            //     };
+            //     reader.readAsDataURL(input.files[0]);
+            // }
         })
 
         // const image_count = 0;
-        let myImage = {};
 
         async function confirm_(myImage) {
             confirm_image = document.getElementById('images');
