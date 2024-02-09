@@ -562,6 +562,9 @@ if (!empty($area_result_row['area_name'])) {
 
 
     <script>
+        <?php if(!empty($row['cat_']) && $row['cat_'] != null){ ?>
+
+
         let checked_box = <?= $row['cat_'] ?>;
         let label = document.querySelectorAll('input[type="checkbox"]')
         for (j = 0; j < checked_box.length; j++) {
@@ -571,6 +574,7 @@ if (!empty($area_result_row['area_name'])) {
                 }
             }
         }
+        <?php }?>
 
         document.getElementById('images').addEventListener('change', (event) => {
             document.getElementById('preview-the-image').style.display = 'grid';
@@ -758,7 +762,9 @@ if (!empty($area_result_row['area_name'])) {
                 }
             }
         });
-        displayImagesOnPage(myImage);
+        <?php if (!empty($row['image_']) && $row['image_'] != null) { ?>
+            displayImagesOnPage(myImage);
+        <?php } ?>
     </script>
     <script src="<?= get_url() ?>assets/ckeditor/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
