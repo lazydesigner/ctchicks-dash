@@ -562,19 +562,15 @@ if (!empty($area_result_row['area_name'])) {
 
 
     <script>
-        <?php if(!empty($row['cat_']) && $row['cat_'] != null){ ?>
-
-
-        let checked_box = <?= $row['cat_'] ?>;
-        let label = document.querySelectorAll('input[type="checkbox"]')
-        for (j = 0; j < checked_box.length; j++) {
-            for (let i = 0; i < label.length; i++) {
-                if (label[i].nextSibling.textContent.includes(checked_box[j])) {
-                    label[i].checked = true;
+            let checked_box = <?php if(!empty($row['cat_']) && $row['cat_'] != null){ echo  $row['cat_'];}else{ echo []; } ?>;
+            let label = document.querySelectorAll('input[type="checkbox"]')
+            for (j = 0; j < checked_box.length; j++) {
+                for (let i = 0; i < label.length; i++) {
+                    if (label[i].nextSibling.textContent.includes(checked_box[j])) {
+                        label[i].checked = true;
+                    }
                 }
             }
-        }
-        <?php }?>
 
         document.getElementById('images').addEventListener('change', (event) => {
             document.getElementById('preview-the-image').style.display = 'grid';
