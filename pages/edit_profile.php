@@ -562,7 +562,7 @@ if (!empty($area_result_row['area_name'])) {
 
 
     <script>
-            let checked_box = <?php if(!empty($row['cat_']) && $row['cat_'] != null){ echo  $row['cat_'];}else{ echo []; } ?>;
+            let checked_box = <?php if(!empty($row['cat_']) && $row['cat_'] != null){ echo  $row['cat_'];}else{ ?>[]<?php } ?>;
             let label = document.querySelectorAll('input[type="checkbox"]')
             for (j = 0; j < checked_box.length; j++) {
                 for (let i = 0; i < label.length; i++) {
