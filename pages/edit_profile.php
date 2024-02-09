@@ -607,7 +607,7 @@ if (!empty($area_result_row['area_name'])) {
             myImage[<?= $i ?>]['image_path'] = 'profiles/<?= $server_ ?>';
             myImage[<?= $i ?>]['image_name'] = '<?= $server_ ?>';
             myImage[<?= $i ?>]['number_of_image'] = <?= $i + 1 ?>;
-            myImage[<?= $i ?>]['image_alt'] = '<?= $image_alt_from_server[$i] ?>';  
+            myImage[<?= $i ?>]['image_alt'] = '<?php if(!empty($image_alt_from_server[$i])){echo $image_alt_from_server[$i]; }else{echo 'ctchicks call girl provider';} ?>';  
 
         <?php }} ?>
 
