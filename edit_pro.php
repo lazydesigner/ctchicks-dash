@@ -16,6 +16,7 @@ if($callgirl_escort == "call-girls"){
 $cities = $_POST['cities'];
 $areas = $_POST['areas'];
 $page_title = $_POST['page_title'];
+$page_h1= $_POST['page_h1'];
 $meta_description = $_POST['meta_description'];
 $profile_name = $_POST['profile_name'];
 $profile_age = $_POST['profile_age'];
@@ -45,7 +46,7 @@ $image_alt_ = json_encode($_POST['image_alt_']);
 $content = $_POST['content'];
 
 
-$query = "UPDATE `profiles` SET `identity`=$identity,`identity_cat`='$identity_cat',`callgirl_escort`='$callgirl_escort',`cities`='$cities',`areas`='$areas',`page_title`='$page_title',`meta_description`='$meta_description',`profile_name`='$profile_name',`profile_age`=$profile_age,`profile_height`='$profile_height',`profile_language`='$profile_language',`profile_nationality`='$profile_nationality',`profile_body_shape`='$profile_body_shape',`cat_`='$cat_',`image_`='$image_',`image_alt_`='$image_alt_',`content`='$content' WHERE `profile_id` = $user_id";
+$query = "UPDATE `profiles` SET `identity`=$identity,`identity_cat`='$identity_cat',`callgirl_escort`='$callgirl_escort',`cities`='$cities',`areas`='$areas',`page_title`='$page_title',`page_h1`='$page_h1',`meta_description`='$meta_description',`profile_name`='$profile_name',`profile_age`=$profile_age,`profile_height`='$profile_height',`profile_language`='$profile_language',`profile_nationality`='$profile_nationality',`profile_body_shape`='$profile_body_shape',`cat_`='$cat_',`image_`='$image_',`image_alt_`='$image_alt_',`content`='$content' WHERE `profile_id` = $user_id";
 
 $result = mysqli_query($con, $query);
 if ($result) {

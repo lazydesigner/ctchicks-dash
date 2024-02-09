@@ -30,20 +30,20 @@ $area_result = mysqli_query($con, $area_option_query);
 $area_result_row = mysqli_fetch_assoc($area_result);
 $option_area = '<option value="all">All Location</option>';
 
-if(!empty($area_result_row['area_name'])){
+if (!empty($area_result_row['area_name'])) {
 
-foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
-    $x = explode('-', $area_row);
-    $d = '';
-    foreach ($x as $c) {
-        $d .= $c . ' ';
+    foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
+        $x = explode('-', $area_row);
+        $d = '';
+        foreach ($x as $c) {
+            $d .= $c . ' ';
+        }
+        if (strtolower($area_row) == strtolower($row['areas'])) {
+            $option_area .= "<option value='" . strtolower($area_row) . "' selected>" . $d . "</option>";
+        } else {
+            $option_area .= "<option value='" . strtolower($area_row) . "'>" . $d . "</option>";
+        }
     }
-    if (strtolower($area_row) == strtolower($row['areas'])) {
-        $option_area .= "<option value='" . strtolower($area_row) . "' selected>" . $d . "</option>";
-    } else {
-        $option_area .= "<option value='" . strtolower($area_row) . "'>" . $d . "</option>";
-    }
-}
 }
 
 
@@ -385,8 +385,8 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
         <div class="action-pannel">
             <div class="action-center">
                 <form id="profile" method="post" action="<?= get_url() ?>edit_pro.php" enctype="multipart/form-data">
-                    <input type="hidden" name="id_user" value="<?=$_GET['id_'] ?>" />
-                    <input type="hidden" name="identity" value="<?=$row['identity'] ?>" />
+                    <input type="hidden" name="id_user" value="<?= $_GET['id_'] ?>" />
+                    <input type="hidden" name="identity" value="<?= $row['identity'] ?>" />
                     <div class="form-container">
                         <h2>Page Details</h2>
                         <div class="form-group">
@@ -394,11 +394,11 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
                                 <select name="callgirl-escort" id="callgirl-escort">
                                     <?php if ($row['callgirl_escort'] == 'call-girls') { ?>
                                         <option value="call-girls" selected>Call Girl</option>
-                                    <option value="escorts">Escorts</option>
+                                        <option value="escorts">Escorts</option>
                                     <?php } else { ?>
                                         <option value="call-girls">Call Girl</option>
-                                    <option value="escort" selected>Escorts</option>
-                                    <?php } ?>                                    
+                                        <option value="escort" selected>Escorts</option>
+                                    <?php } ?>
                                 </select>
                                 <select name="cities" id="cities">
                                     <?= $option ?>
@@ -413,6 +413,9 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
                         </div>
                         <div class="form-group">
                             <textarea name="meta_description" value="<?= $row['meta_description'] ?>" placeholder="Page Description (Optional)" id="meta_description" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="page_h1" autocomplete="off" value="<?= $row['page_h1'] ?>" placeholder="Page H1" id="page_title" required>
                         </div>
                     </div>
                     <div class="form-container">
@@ -577,6 +580,7 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
                 reader.onload = function(e) {
                     const imagePreview = document.getElementById('preview-image');
                     imagePreview.src = e.target.result;
+                    document.getElementById('upload-the-image').click();
                 };
                 reader.readAsDataURL(input.files[0]);
             }
@@ -586,7 +590,10 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
         let myImage = {};
 
         <?php
-        $image_from_server = json_decode($row['image_']);
+        if (!empty($row['image_']) && $row['image_'] != null) {
+            $image_count = json_decode($row['image_'], true);
+
+            $image_from_server = json_decode($row['image_']);
         $image_alt_from_server = json_decode($row['image_alt_']);
 
         foreach ($image_from_server as $i => $server_) {; ?>
@@ -595,9 +602,9 @@ foreach (json_decode($area_result_row['area_name'], true) as $area_row) {
             myImage[<?= $i ?>]['image_path'] = 'profiles/<?= $server_ ?>';
             myImage[<?= $i ?>]['image_name'] = '<?= $server_ ?>';
             myImage[<?= $i ?>]['number_of_image'] = <?= $i + 1 ?>;
-            myImage[<?= $i ?>]['image_alt'] = '<?= $image_alt_from_server[$i] ?>';
+            myImage[<?= $i ?>]['image_alt'] = '<?= $image_alt_from_server[$i] ?>';  
 
-        <?php } ?>
+        <?php }} ?>
 
         async function confirm_(myImage) {
             confirm_image = document.getElementById('images');
