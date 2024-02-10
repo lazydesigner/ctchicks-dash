@@ -465,6 +465,16 @@ if (mysqli_num_rows($result) > 0) {
                                     <td><label for="Young Girl"><input type="checkbox" name="cat_[]" id="Young Girl" value="Young Girl">Young Girl</label></td>
                                     <td><label for="Desi Girl"><input type="checkbox" name="cat_[]" id="Desi Girl" value="Desi Girl">Desi Girl</label></td>
                                     <td><label for="House Wife"><input type="checkbox" name="cat_[]" id="House Wife" value="House Wife">House Wife</label></td>
+                                    <td><label for="Air Hostress"><input type="checkbox" name="cat_[]" id="Air Hostress" value="Air Hostress">Air Hostress</label></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="Shemale-Call-Girl"><input type="checkbox" name="cat_[]" id="Shemale-Call-Girl" value="Shemale Call Girl">Shemale Call Girl</label></td>
+                                    <td><label for="Foreigner-Call-Girl"><input type="checkbox" name="cat_[]" id="Foreigner-Call-Girl" value="Foreigner Call Girl">Foreigner Call Girl</label></td>
+                                    <td><label for="Russian Call Girl"><input type="checkbox" name="cat_[]" id="Russian Call Girl" value="Russian Call Girl">Russian Call Girl</label></td>
+                                    <td><label for="Nepali-Call-Girl"><input type="checkbox" name="cat_[]" id="Nepali-Call-Girl" value="Nepali Call Girlt">Nepali Call Girl</label></td>
+                                    <td><label for="Pubjabi-Call-Girl"><input type="checkbox" name="cat_[]" id="Pubjabi-Call-Girl" value="Pubjabi Call Girl">Pubjabi Call Girl</label></td>
+                                    <td><label for="Assamesse-Call-Girl"><input type="checkbox" name="cat_[]" id="Assamesse-Call-Girl" value="Assamesse Call Girl">Assamesse Call Girl</label></td>
+
                                 </tr>
                             </table>
                         </div>
