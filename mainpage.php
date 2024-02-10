@@ -154,7 +154,7 @@
             <div class="action-center">
                 <div class="search-add-add-profile">
                     <div class="search">
-                        <input type="text" name="search" id="search" autocomplete="off" placeholder="Search profiles..." /><i class="ri-search-eye-line"></i>
+                        <input type="text" name="search" id="search-the-profile" autocomplete="off" placeholder="Search profiles..." /><i class="ri-search-eye-line"></i>
                     </div>
                     <div class="add-profile"><a href="<?=get_url() ?>add-profile/"><button><i class="ri-add-line"></i> Add</button></a></div>
                 </div>
@@ -171,10 +171,10 @@
                                 <th style="width:12%;background:tomato">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="table-data">
                             <?php 
                             
-                            $sql = "SELECT * FROM profiles";
+                            $sql = "SELECT * FROM profiles ORDER BY profile_id DESC";
                             $result = mysqli_query($con, $sql);
                             if (mysqli_num_rows($result)>0) {
                                 while($row = mysqli_fetch_assoc($result)){?>
@@ -224,6 +224,33 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('search-the-profile').addEventListener('keyup',(e)=>{
+            search_term = e.target.value.toLowerCase();
+            table = document.getElementById('table-data');
+            sub_table = table.children
+            table_c = sub_table.length
+            for (let i=0;i<table_c;i++){
+                row = sub_table[i];
+                                
+                for(j=0;j<row.children.length;j++){
+                    if((j+1) != row.children.length){
+                        if(row.children[j+1].textContent.trim().toLowerCase().includes(search_term) ){
+                            row.style.display = '';
+                            break
+                        }else{
+                            row.style.display = 'none';
+                        }
+                    }else{
+                        continue
+                    }
+                }
+            }
+
+
+        })
+    </script>
 
 </body>
 
