@@ -467,7 +467,7 @@ if (!empty($area_result_row['area_name'])) {
                                     <option value="Gujju Girl">Gujju Girl</option>
                                     <option value="Party Girl">Party Girl</option>
                                     <option value="Dating Escort">Dating Escort</option>
-                                    <option value="Women Seeking Girl">Women Seeking Girl</option>
+                                    <option value="Women Seeking Girl">Women Seeking Men</option>
                                     <option value="Shemale Escort">Shemale Escort</option>
                                     <option value="Transgender | Lesbian">Transgender | Lesbian</option>
                                     <option value="Nepali Escort">Nepali Escort</option>
@@ -494,7 +494,7 @@ if (!empty($area_result_row['area_name'])) {
                                     <td><label for="Gujju"><input type="checkbox" name="cat_[]" id="Gujju" value="Gujju Girl">Gujju Girl</label></td>
                                     <td><label for="Party"><input type="checkbox" name="cat_[]" id="Party" value="Party Girl">Party Girl</label></td>
                                     <td><label for="Dating"><input type="checkbox" name="cat_[]" id="Dating" value="Dating Escort">Dating Escort</label></td>
-                                    <td><label for="Women-Seeking"><input type="checkbox" name="cat_[]" id="Women-Seeking" value="Women Seeking Girl">Women Seeking Girl</label></td>
+                                    <td><label for="Women-Seeking"><input type="checkbox" name="cat_[]" id="Women-Seeking" value="Women Seeking Men">Women Seeking Men</label></td>
 
                                 </tr>
                                 <tr>
@@ -512,6 +512,15 @@ if (!empty($area_result_row['area_name'])) {
                                     <td><label for="Young Girl"><input type="checkbox" name="cat_[]" id="Young Girl" value="Young Girl">Young Girl</label></td>
                                     <td><label for="Desi Girl"><input type="checkbox" name="cat_[]" id="Desi Girl" value="Desi Girl">Desi Girl</label></td>
                                     <td><label for="House Wife"><input type="checkbox" name="cat_[]" id="House Wife" value="House Wife">House Wife</label></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="Shemale-Call-Girl"><input type="checkbox" name="cat_[]" id="Shemale-Call-Girl" value="Shemale Call Girl">Shemale Call Girl</label></td>
+                                    <td><label for="Foreigner-Call-Girl"><input type="checkbox" name="cat_[]" id="Foreigner-Call-Girl" value="Foreigner Call Girl">Foreigner Call Girl</label></td>
+                                    <td><label for="Russian Call Girl"><input type="checkbox" name="cat_[]" id="Russian Call Girl" value="Russian Call Girl">Russian Call Girl</label></td>
+                                    <td><label for="Nepali-Call-Girl"><input type="checkbox" name="cat_[]" id="Nepali-Call-Girl" value="Nepali Call Girlt">Nepali Call Girl</label></td>
+                                    <td><label for="Pubjabi-Call-Girl"><input type="checkbox" name="cat_[]" id="Pubjabi-Call-Girl" value="Pubjabi Call Girl">Pubjabi Call Girl</label></td>
+                                    <td><label for="Assamesse-Call-Girl"><input type="checkbox" name="cat_[]" id="Assamesse-Call-Girl" value="Assamesse Call Girl">Assamesse Call Girl</label></td>
+
                                 </tr>
                             </table>
                         </div>

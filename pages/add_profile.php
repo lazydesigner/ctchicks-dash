@@ -420,7 +420,7 @@ if (mysqli_num_rows($result) > 0) {
                                     <option value="Gujju Girl">Gujju Girl</option>
                                     <option value="Party Girl">Party Girl</option>
                                     <option value="Dating Escort">Dating Escort</option>
-                                    <option value="Women Seeking Girl">Women Seeking Girl</option>
+                                    <option value="Women Seeking Men">Women Seeking Men</option>
                                     <option value="Shemale Escort">Shemale Escort</option>
                                     <option value="Transgender | Lesbian">Transgender | Lesbian</option>
                                     <option value="Nepali Escort">Nepali Escort</option>
@@ -447,7 +447,7 @@ if (mysqli_num_rows($result) > 0) {
                                     <td><label for="Gujju"><input type="checkbox" name="cat_[]" id="Gujju" value="Gujju Girl">Gujju Girl</label></td>
                                     <td><label for="Party"><input type="checkbox" name="cat_[]" id="Party" value="Party Girl">Party Girl</label></td>
                                     <td><label for="Dating"><input type="checkbox" name="cat_[]" id="Dating" value="Dating Escort">Dating Escort</label></td>
-                                    <td><label for="Women-Seeking"><input type="checkbox" name="cat_[]" id="Women-Seeking" value="Women Seeking Girl">Women Seeking Girl</label></td>
+                                    <td><label for="Women-Seeking"><input type="checkbox" name="cat_[]" id="Women-Seeking" value="Women Seeking Men">Women Seeking Men</label></td>
 
                                 </tr>
                                 <tr>
