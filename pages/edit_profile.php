@@ -529,7 +529,7 @@ if (!empty($area_result_row['area_name'])) {
                     <div class="form-container">
                         <div class="form-group">
                             <div class="form-flex">
-                                <input type="file" name="images" id="images" accept="image/*" id="">
+                                <input type="file" name="images" id="images" accept="image/*" id="" multiple>
 
                                 <div class="preview-the-selected-image" id="preview-the-selected-image">
 
