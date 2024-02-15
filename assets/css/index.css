@@ -124,7 +124,7 @@ ul {
 
 ::-webkit-scrollbar-track {
     width: 10px;
-    background-color: rgba(255, 0, 0, 0.442);
+    background-color: rgba(61, 61, 61, 0.442);
 }
 
 ::-webkit-scrollbar {
@@ -141,7 +141,7 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(235, 50, 50);
+    background-color: rgb(251, 117, 0);
 }
 
 
