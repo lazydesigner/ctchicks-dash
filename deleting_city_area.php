@@ -55,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $id = $_POST['id'];
         $index = explode(',',$_POST['index']);
+        $new_list ='';
+        $list_of_area='';
         // 0 is index
         // 1 is area name
         // 2 is city name
@@ -81,7 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         $convertjsontoarray = json_decode($area_row['area_name'], true);
                         foreach ($convertjsontoarray as $key => $value) {
-                            $AREA_NAME .= '<div class="city-list" value="' . strtolower($value) . '" ><span class="city-list-delete" onclick="Deletethecity(\'city_area\',' . $area_row['add_id'] . ', ' . $key . ')">x</span><p style="text-transform: capitalize;">' . $value . '</p></div>';
+                            $list_y = "'".implode(",",[$key, $value, $area_row['area_city_name']])."'";
+                            $AREA_NAME .= '<div class="city-list" value="' . strtolower($value) . '" ><span class="city-list-delete" onclick="Deletethecity(\'city_area\',' . $area_row['add_id'] . ', ' . $list_y . ')">x</span><p style="text-transform: capitalize;">' . $value . '</p></div>';
                         }
 
                         $output .= '<div class="list_of_all_area_with_city">

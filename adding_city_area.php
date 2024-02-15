@@ -37,7 +37,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } elseif ($_POST['pass'] == 'city_area') {  
             $CITY_NAME = '';         
             $AREA_NAME = '';
-            $list_of_cities_area = preg_split("/[' , \"]+/", $_POST['value'], -1, PREG_SPLIT_NO_EMPTY);
+            $list_of_cities_area_dub = preg_split("/[',\"]+/", $_POST['value'], -1, PREG_SPLIT_NO_EMPTY);
+            $list_of_cities_area = [];
+
+            foreach($list_of_cities_area_dub as $new_list){
+                $_new_list = explode(' ',trim($new_list));
+                $creating_new_area_name = '';
+                for($n=0;$n<count($_new_list);$n++){
+                    if($n == (count($_new_list) - 1)){
+                        $creating_new_area_name .= $_new_list[$n];
+                    }else{
+                        $creating_new_area_name .= $_new_list[$n].'-';
+                    }                    
+                }      
+                array_push($list_of_cities_area,$creating_new_area_name);
+            }
+
+
 
             $querytocheckifcitypresentinarea2 = "SELECT * FROM area2 WHERE area_city_name = '{$_POST['_city_name_']}' ";
             $querytocheckifcitypresentinarea2result = mysqli_query($con, $querytocheckifcitypresentinarea2);
