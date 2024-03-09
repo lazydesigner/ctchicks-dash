@@ -666,6 +666,20 @@ if (mysqli_num_rows($result) > 0) {
                     if (image_count < 4) {
                         document.getElementById("images").disabled = false;
                     }
+                }else if(d['status'] == 404){
+                    delete myImage[key];
+                    image_count = Object.keys(myImage).length
+                    image_count--
+                    displayImagesOnPage(myImage);
+                    document.querySelector('.error-msg').style.display = 'block'
+                    document.querySelector('.error-msg').style.backgroundColor = 'green'
+                    document.getElementById('error_msg').innerText = 'Image Deleted Successfully';
+                    setTimeout(() => {
+                        document.querySelector('.error-msg').style.display = 'none'
+                    }, 3000)
+                    if (image_count < 4) {
+                        document.getElementById("images").disabled = false;
+                    }
                 } else {
                     document.querySelector('.error-msg').style.display = 'block'
                     document.getElementById('error_msg').innerText = 'Something went Wrong: Not Deleted';

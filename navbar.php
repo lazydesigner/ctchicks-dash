@@ -9,8 +9,10 @@
         <nav>
             <ul>
                 <li><a href="<?= get_url() ?>"><i class="ri-user-add-line"></i>Profiles</a></li>
+                <?php if($_SESSION["user_name"] == 'admin'){ ?> 
                 <li><a href="<?= get_url() ?>add-city/"><i class="ri-map-pin-range-line"></i>Cities</a></li>
                 <li><a href="<?= get_url() ?>"><i class="ri-pages-line"></i>City Content</a></li>
+                <?php } ?>
             </ul>
         </nav>
     </div>
@@ -26,7 +28,7 @@
                                                                                         }
             ?>
 
-            <li><a href="<?= get_url() ?>"><i class="ri-settings-2-line"></i> Settings</a></li>
+<?php if($_SESSION["user_name"] == 'admin'){ ?> <li><a href="<?= get_url() ?>"><i class="ri-settings-2-line"></i> Settings</a></li><?php } ?>
         </ul>
     </div>
 </div>
